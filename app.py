@@ -9,9 +9,16 @@ def hello_world():
 
 
 @app.route('/greet')
-@app.route('/Zeb')
+@app.route('/greet/<name>')
 def greet(name="Zeb"):
     return f"Hello {name}"
+
+
+@app.route('/Fahrenheit')
+@app.route(f'/Fahrenheit/<float:celsius_temp>')
+def celsius_to_fahrenheit(celsius_temp):
+    fahrenheit_temp = celsius_temp * 9.0 / 5 + 32
+    return str(fahrenheit_temp)
 
 
 if __name__ == '__main__':
