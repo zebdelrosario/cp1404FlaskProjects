@@ -18,7 +18,7 @@ def greet(name="Zeb"):
 @app.route(f'/Fahrenheit/<float:celsius_temp>')
 def celsius_to_fahrenheit(celsius_temp):
     fahrenheit_temp = celsius_temp * 9.0 / 5 + 32
-    return str(fahrenheit_temp)
+    return f"{celsius_temp:.1f} degrees Celsius is equal to {fahrenheit_temp:.1f} degrees Fahrenheit."
 
 
 if __name__ == '__main__':
